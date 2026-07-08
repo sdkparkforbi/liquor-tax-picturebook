@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>우리 술 실종 사건 · 세금 추리극 여섯 걸음</title>
-<meta property="og:title" content="우리 술 이야기 · 누가 우리 술의 발목을 잡았나?">
-<meta property="og:description" content="술값의 절반은 세금? 반전 있는 추리극으로 푸는 우리 주류산업의 해법 — 여섯 걸음">
+<title>누가 우리 술의 발목을 잡았나 · 세금 추리극</title>
+<meta property="og:title" content="누가 우리 술의 발목을 잡았나? · 세금 추리극">
+<meta property="og:description" content="술값의 절반은 세금? 뉴스와 데이터로 파헤치는 우리 주류산업의 진짜 범인과 해법 — 여섯 걸음">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aiforalab.com/juryuse/thumbnail.png">
 <meta property="og:image:width" content="1200">
@@ -50,24 +50,33 @@
   .page.show{opacity:1;transform:none}
   .pageno{position:absolute;top:20px;right:26px;font-family:'Gaegu',cursive;color:var(--barley);font-size:1rem;}
   .folio{font-family:'Gaegu',cursive;color:var(--barley-deep);font-size:1.2rem;margin-bottom:2px;}
-  .page h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.3rem);color:var(--ink);margin-bottom:18px;line-height:1.3;}
-  .page p{margin-bottom:14px;color:var(--ink-soft);font-size:1.12rem}
+  .page h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(1.6rem,4.3vw,2.2rem);color:var(--ink);margin-bottom:18px;line-height:1.32;}
+  .page p{margin-bottom:14px;color:var(--ink-soft);font-size:1.1rem}
   .page p strong{color:var(--ink);font-weight:700}
-  .scene{display:flex;justify-content:center;margin:6px 0 22px}
+  .scene{display:flex;justify-content:center;margin:6px 0 20px}
   .scene svg{max-width:100%;height:auto;filter:drop-shadow(0 10px 16px var(--shadow))}
   .big{display:flex;align-items:center;gap:16px;background:#fffdf6;border:2px dashed var(--barley);border-radius:14px;padding:14px 22px;margin:16px 0 4px;}
-  .big .n{font-family:'Gowun Batang',serif;font-size:1.9rem;font-weight:700;color:var(--barley-deep);white-space:nowrap;line-height:1}
-  .big .t{font-size:1.02rem;color:var(--ink-soft)}
-  .cite{font-family:'Gaegu',cursive;font-size:.86rem;color:#9a8a6c;margin:2px 0 16px 4px;}
-  .cite::before{content:"↳ 출처 ";opacity:.8}
+  .big .n{font-family:'Gowun Batang',serif;font-size:1.85rem;font-weight:700;color:var(--barley-deep);white-space:nowrap;line-height:1}
+  .big .t{font-size:1rem;color:var(--ink-soft)}
+  .cite{font-family:'Gaegu',cursive;font-size:.85rem;color:#9a8a6c;margin:2px 0 15px 4px;}
+  .cite::before{content:"↳ ";opacity:.8}
+  /* 뉴스 클리핑 */
+  .news{background:#f7f1e3;border:1px dashed #c4b48f;border-radius:9px;padding:13px 17px;margin:16px 0;}
+  .news .lab{font-family:'Gaegu',cursive;font-size:.92rem;color:var(--plum-deep);display:block;margin-bottom:5px;}
+  .news .q{font-family:'Gowun Batang',serif;font-size:1.04rem;color:var(--ink);line-height:1.6;}
+  .news .src{font-family:'Gaegu',cursive;font-size:.82rem;color:#9a8a6c;display:block;margin-top:6px;}
+  /* 우리 분석 */
+  .anal{background:#ebf3ef;border-left:4px solid var(--pour-deep);border-radius:8px;padding:13px 17px;margin:16px 0;}
+  .anal .lab{font-family:'Gaegu',cursive;font-size:.92rem;color:var(--pour-deep);display:block;margin-bottom:4px;font-weight:700;}
+  .anal p{margin:0;font-size:1.02rem;color:var(--ink);}
+  .anal .num{font-family:'Gowun Batang',serif;font-weight:700;color:var(--pour-deep);}
   .twist{display:inline-block;background:var(--plum);color:#fff;font-family:'Gaegu',cursive;padding:3px 18px;border-radius:999px;font-size:1.15rem;margin-bottom:14px;}
   .hook{font-family:'Gaegu',cursive;font-size:1.25rem;color:var(--plum-deep);text-align:center;margin-top:20px}
-  /* 처방전 카드 */
   .rx{background:#fffdf6;border:2px solid var(--pour-deep);border-radius:18px;padding:24px 26px;margin:22px 0;}
   .rx .rxh{font-family:'Gowun Batang',serif;font-weight:700;font-size:1.2rem;color:var(--pour-deep);margin-bottom:14px;text-align:center}
   .rx .item{display:flex;gap:14px;align-items:flex-start;margin:12px 0;}
-  .rx .item .ic{font-size:1.6rem;line-height:1;flex-shrink:0}
-  .rx .item div{font-size:1.06rem;color:var(--ink)}
+  .rx .item .ic{font-size:1.55rem;line-height:1;flex-shrink:0}
+  .rx .item div{font-size:1.05rem;color:var(--ink)}
   .rx .item b{color:var(--pour-deep)}
   .result{background:var(--paper-deep);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:1.02rem;color:var(--ink)}
   .result b{color:var(--plum-deep)}
@@ -90,7 +99,7 @@
       <svg width="50" height="100" viewBox="0 0 50 100"><rect x="20" y="0" width="10" height="16" rx="2" fill="#3a2e22"/><path d="M10 30c0-8 5-14 15-14s15 6 15 14v56a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6z" fill="#a8536b"/><rect x="13" y="46" width="24" height="30" rx="2" fill="#f4ead5"/></svg>
       <svg width="48" height="106" viewBox="0 0 48 106"><path d="M12 24h24l3 14v56a8 8 0 0 1-8 8H17a8 8 0 0 1-8-8V38z" fill="#e8e2d4"/><rect x="16" y="8" width="16" height="18" rx="3" fill="#cfc6b0"/><rect x="10" y="54" width="28" height="26" rx="3" fill="#8fb0a3"/></svg>
     </div>
-    <p class="sub">술값의 절반은 세금? 반전 있는 추리극</p>
+    <p class="sub">술값의 절반은 세금? 뉴스와 데이터로 파헤치는 추리극</p>
     <p class="tiny">여섯 걸음이면 우리 술을 살리는 답이 보여요</p>
     <div class="scroll-cue">↓ 사건 파일을 열어보세요</div>
   </header>
@@ -112,7 +121,11 @@
       </svg>
     </div>
     <p>소주 한 병이 공장에서 나올 때, 이미 <strong>값의 절반쯤이 세금</strong>이에요. 우리가 낸 돈의 절반이 술이 아니라 세금이었던 거죠.</p>
-    <div class="cite">“소주 출고가의 절반이 세금” — 머니투데이(2023)</div>
+    <div class="news">
+      <span class="lab">📰 뉴스 파일</span>
+      <span class="q">“소주 출고가 절반이 세금…주류세 손 보면 식당 술값 잡힐까”</span>
+      <span class="src">머니투데이 (2023)</span>
+    </div>
     <p class="hook">왜 이렇게 많을까? 세금 매기는 방법에 비밀이 있어요.</p>
   </section>
 
@@ -133,9 +146,14 @@
         <text x="275" y="102" text-anchor="middle" font-size="12" fill="#5b8375">값은 안 봐요</text>
       </svg>
     </div>
-    <p>세상엔 두 가지 세금이 있어요. 하나는 <strong>‘값’에 붙이고(종가세)</strong>, 하나는 <strong>‘양’에 붙여요(종량세).</strong></p>
-    <p>세계 대부분은 ‘양’ 세금을 써요. <strong>OECD 38개국 중 ‘값’ 세금은 딱 4개국</strong> — 그중 하나가 우리나라 소주·위스키랍니다.</p>
-    <div class="cite">OECD 주세 비교 · 자유기업원 해설</div>
+    <p>세상엔 두 가지 세금이 있어요. 하나는 <strong>‘값’에 붙이고(종가세)</strong>, 하나는 <strong>‘양’에 붙여요(종량세).</strong> 세계 대부분은 ‘양’ 세금을 써요.</p>
+    <div class="big"><div class="n">38개국 중 4개국</div><div class="t">OECD에서 아직 ‘값’ 세금(종가세) 쓰는 나라 — 한국·칠레·멕시코·콜롬비아</div></div>
+    <div class="cite">OECD 주세 비교 · 자유기업원</div>
+    <div class="news">
+      <span class="lab">📰 뉴스 파일</span>
+      <span class="q">“58년간 묶인 ‘종가세’… 韓 위스키 가로막는 ‘주세’”</span>
+      <span class="src">뉴스핌, K-술 리포트 ③</span>
+    </div>
     <p class="hook">이 ‘값 세금’이 착한 우리 술을 울립니다.</p>
   </section>
 
@@ -145,22 +163,30 @@
     <div class="folio">셋째 걸음 · 첫 번째 용의자</div>
     <h2>억울한 우리 술</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="380" height="185" viewBox="0 0 380 185">
-        <rect x="182" y="148" width="16" height="32" rx="3" fill="#a8791f"/>
-        <rect x="150" y="174" width="80" height="11" rx="5" fill="#a8791f"/>
+      <svg width="380" height="180" viewBox="0 0 380 180">
+        <rect x="182" y="146" width="16" height="30" rx="3" fill="#a8791f"/>
+        <rect x="150" y="172" width="80" height="10" rx="5" fill="#a8791f"/>
         <rect x="60" y="80" width="260" height="9" rx="4" fill="#c99a3f"/>
         <line x1="100" y1="85" x2="100" y2="110" stroke="#5b8375" stroke-width="2"/>
-        <rect x="82" y="110" width="36" height="22" rx="4" fill="#8fb0a3"/>
-        <text x="100" y="150" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">맥주 세금</text>
-        <line x1="290" y1="85" x2="290" y2="98" stroke="#843f53" stroke-width="2"/>
-        <rect x="258" y="98" width="64" height="60" rx="6" fill="#a8536b"/>
-        <text x="290" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">위스키</text>
-        <text x="290" y="143" text-anchor="middle" font-size="11" fill="#fff">세금</text>
+        <rect x="82" y="110" width="36" height="20" rx="4" fill="#8fb0a3"/>
+        <text x="100" y="148" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">맥주 세금</text>
+        <line x1="290" y1="85" x2="290" y2="96" stroke="#843f53" stroke-width="2"/>
+        <rect x="258" y="96" width="64" height="60" rx="6" fill="#a8536b"/>
+        <text x="290" y="123" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">위스키</text>
+        <text x="290" y="140" text-anchor="middle" font-size="11" fill="#fff">세금</text>
       </svg>
     </div>
     <p>‘값’에 붙이니, 좋은 재료로 정성껏 만든 <strong>비싼 술일수록 세금이 무거워져요.</strong> 잘 만들수록 손해라니, 억울하죠.</p>
-    <div class="big"><div class="n">14배</div><div class="t">위스키 세금(11,104원/L)은 맥주(772원/L)의 열네 배!</div></div>
-    <div class="cite">국세청 주세신고현황(2024) 리터당 세부담 계산</div>
+    <div class="anal">
+      <span class="lab">📊 우리 분석 — 리터당 세부담(2024, 원/L)</span>
+      <p>맥주 <span class="num">772</span> · 소주 <span class="num">1,360</span> · 증류식소주 <span class="num">7,512</span> · 위스키 <span class="num">11,104</span><br>→ 위스키 세금은 맥주의 <span class="num">14배!</span></p>
+    </div>
+    <div class="cite">국세청 주세신고현황(납부세액÷출고량) 자체계산</div>
+    <div class="news">
+      <span class="lab">📰 뉴스 파일</span>
+      <span class="q">‘양’ 세금을 쓰는 일본에선, 같은 위스키가 국내의 절반 값에 팔린다는 지적이 나온다.</span>
+      <span class="src">업계·언론 (종가세 vs 종량세 비교)</span>
+    </div>
     <p class="hook">범인은 ‘값 세금’이군! …그런데, 반전이 있어요.</p>
   </section>
 
@@ -171,48 +197,52 @@
     <span class="twist">🔍 반전!</span>
     <h2>세금 무거운 술이 더 잘 팔린다?!</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="360" height="175" viewBox="0 0 360 175">
-        <line x1="40" y1="150" x2="330" y2="150" stroke="#d8c8a6" stroke-width="2"/>
-        <rect x="90" y="118" width="46" height="32" rx="4" fill="#e0d3b5"/>
-        <text x="113" y="168" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">예전</text>
-        <rect x="210" y="42" width="46" height="108" rx="4" fill="#a8536b"/>
+      <svg width="360" height="170" viewBox="0 0 360 170">
+        <line x1="40" y1="148" x2="330" y2="148" stroke="#d8c8a6" stroke-width="2"/>
+        <rect x="90" y="118" width="46" height="30" rx="4" fill="#e0d3b5"/>
+        <text x="113" y="165" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">예전</text>
+        <rect x="210" y="42" width="46" height="106" rx="4" fill="#a8536b"/>
         <text x="233" y="34" text-anchor="middle" font-size="15" fill="#843f53" font-family="Gaegu,cursive" font-weight="700">3배 ↑</text>
-        <text x="233" y="168" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">지금</text>
-        <text x="300" y="60" font-size="30" fill="#a8791f" font-family="Gowun Batang,serif">?!</text>
+        <text x="233" y="165" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">지금</text>
+        <text x="300" y="58" font-size="30" fill="#a8791f" font-family="Gowun Batang,serif">?!</text>
       </svg>
     </div>
-    <p>세금이 범인이라면, 세금 무거운 술은 힘들어야죠. 그런데 정반대예요. <strong>세금이 제일 무거운 위스키·증류식 소주가 3배나 컸어요!</strong></p>
-    <div class="big"><div class="n">3.1배</div><div class="t">위스키 출고량 2020→2024 (9,803 → 30,161㎘)</div></div>
-    <div class="cite">국세청 주류 출고량</div>
-    <p>심지어 <strong>세금이 무거운 술일수록 더 빨리 성장</strong>했어요(상관 +0.68). “어? 그럼 세금이 범인이 아닌가?”</p>
-    <div class="cite">주종별 세부담↔성장률 상관분석(자체)</div>
+    <p>세금이 범인이라면, 세금 무거운 술은 힘들어야죠. 그런데 정반대예요. <strong>세금이 제일 무거운 위스키·증류식 소주가 오히려 3배나 컸어요!</strong></p>
+    <div class="anal">
+      <span class="lab">📊 우리 분석 — 성장의 역설</span>
+      <p>· 위스키 출고량 <span class="num">3.1배</span> (2020→2024) · 증류식소주 <span class="num">2.9배</span><br>
+      · 프리미엄 비중 <span class="num">0.33% → 0.99%</span> (3배)<br>
+      · 세금이 무거운 주종일수록 더 성장 — 상관 <span class="num">r=+0.68</span></p>
+    </div>
+    <div class="cite">국세청 출고량 · 주종별 세부담↔성장률 상관(자체)</div>
+    <p>“어? 세금이 무거운데도 더 큰다면… 세금이 범인이 아닌 건가?” 수사가 미궁에 빠집니다.</p>
     <p class="hook">진짜 범인을 밝히려면, 딱 하나만 확인하면 돼요.</p>
   </section>
 
   <!-- 5 -->
   <section class="page">
     <span class="pageno">5 / 6</span>
-    <div class="folio">다섯째 걸음 · 결정적 증거</div>
+    <div class="folio">다섯째 걸음 · 결정적 증거, 그리고 좌절</div>
     <h2>세금을 낮추면, 값이 진짜 내려갈까?</h2>
-    <div class="scene" aria-hidden="true">
-      <svg width="360" height="150" viewBox="0 0 360 150">
-        <rect x="60" y="40" width="60" height="16" rx="4" fill="#a8536b"/>
-        <path d="M90 56 v64" stroke="#8fb0a3" stroke-width="10"/>
-        <text x="90" y="140" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">비싼 술: 값 확↓</text>
-        <text x="180" y="80" font-size="26" fill="#a8791f" font-family="Gowun Batang,serif">✓</text>
-        <rect x="240" y="40" width="60" height="16" rx="4" fill="#a8536b"/>
-        <path d="M270 56 v22" stroke="#a8536b" stroke-width="4" stroke-dasharray="2 6"/>
-        <text x="270" y="140" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">싼 소주: 찔끔</text>
-      </svg>
+    <p>열쇠는 이거예요 — 세금을 깎으면 값이 정말 내려갈까? <strong>증거 둘을 찾았습니다.</strong></p>
+    <div class="anal">
+      <span class="lab">📊 증거 ① — 우리 분석</span>
+      <p>2024년 소주 세금(과세표준)을 낮추자, <span class="num">소주값이 −2.3%</span> 실제 하락. 전 기간 통틀어 소주값이 내린 <b>유일한 해</b>였어요.</p>
     </div>
-    <p>범인을 잡는 열쇠는 이거예요 — 세금을 깎으면 값이 정말 내려갈까? <strong>증거 둘을 찾았습니다.</strong></p>
-    <p><strong>증거 ①</strong> 2024년 소주 세금(과세표준)을 낮추자, <strong>소주값이 실제로 2.3% 내렸어요.</strong> 전 기간 통틀어 소주값이 내린 유일한 해!</p>
-    <div class="cite">한국은행 소비자물가지수 · 기준판매비율 도입</div>
-    <p><strong>증거 ②</strong> 세계 연구도 같은 말 — <strong>비싼 술은 세금을 내리면 값이 확실히 내려가요</strong>(전가율 스카치 1.14).</p>
-    <div class="cite">Shang et al.(2020), OECD 27개국 세금 전가율</div>
-    <p>결론: <strong>세금은 범인이 맞아요.</strong> 위스키는 세금을 뚫고 큰 거고, <strong>세금을 풀면 더 큽니다.</strong> 종량세로 바꾸면 위스키 세금은 <strong>78.7%나 줄어요.</strong></p>
-    <div class="cite">증류주 종량세 전환 시뮬레이션 · 국회 주세법 개정안(언론 보도)</div>
-    <p class="hook">근데 그냥 다 깎으면 안 돼요. 함정이 있거든요.</p>
+    <div class="cite">한국은행 소비자물가지수 · 기준판매비율 도입 효과(자체)</div>
+    <div class="news">
+      <span class="lab">📰 증거 ② — 국제 연구</span>
+      <span class="q">비싼 술은 세금을 내리면 값이 확실히 내려간다(전가율 스카치위스키 1.14). 알코올세는 평균 1.5배까지 소비자가로 넘어간다.</span>
+      <span class="src">Shang et al.(2020) · Nelson &amp; Moran(2020)</span>
+    </div>
+    <p><strong>결론: 세금은 범인이 맞아요.</strong> 위스키는 세금을 뚫고 큰 거고, 세금을 풀면 더 큽니다. 종량세로 바꾸면 위스키 세금은 <strong>78.7%나 줄어요.</strong></p>
+    <div class="cite">증류주 종량세 전환 시뮬레이션(위스키 63,651→13,545원)</div>
+    <div class="news">
+      <span class="lab">📰 뉴스 파일 — 그런데 좌절</span>
+      <span class="q">‘반값 위스키’ 기대 속 증류주 종량세 개정안이 국회에 발의됐지만(2023.10), 소주값 인상·세수 감소 우려로 조세소위에 상정되지 못한 채 자동폐기됐다.</span>
+      <span class="src">법률신문·농민신문 (2023)</span>
+    </div>
+    <p class="hook">왜 못 했을까? 여기에 ‘함정’이 있었어요.</p>
   </section>
 
   <!-- 6 -->
@@ -220,17 +250,22 @@
     <span class="pageno">6 / 6</span>
     <div class="folio">여섯째 걸음 · 사건 해결</div>
     <h2>이렇게 하면, 우리 술이 삽니다</h2>
-    <p><strong>함정:</strong> 소주까지 종량세로 바꾸면 <strong>소주값이 30.5% 올라요.</strong> 소주는 서민의 술인데 말이죠. 게다가 소주는 값에 둔감해서(비탄력 −0.32) 값만 오르고 소비는 안 줄어요.</p>
+    <p><strong>함정:</strong> 소주까지 한꺼번에 종량세로 바꾸면 <strong>소주값이 30.5% 올라요.</strong> 소주는 서민의 술인데 말이죠. 게다가 소주는 값에 둔감해서(비탄력 −0.32) 값만 오르고 소비는 안 줄어요. 국회가 멈춘 진짜 이유죠.</p>
     <div class="cite">종량세 시뮬(소주 662→864원) · 소주 탄력성(자체·이준규·송은주 2017)</div>
     <div class="rx">
       <div class="rxh">🥃 우리 술을 살리는 세 걸음</div>
-      <div class="item"><div class="ic">1️⃣</div><div><b>프리미엄부터 ‘양’ 세금으로</b> — 위스키·증류식 소주를 도수(알코올 양) 기준 종량세로. 세금 확 내려가고 값도 내려가 잘 팔려요.</div></div>
+      <div class="item"><div class="ic">1️⃣</div><div><b>프리미엄부터 ‘양(도수)’ 세금으로</b> — 위스키·증류식 소주를 종량세로. 세금 확 내려 값도 내려가고 잘 팔려요.</div></div>
       <div class="item"><div class="ic">2️⃣</div><div><b>소주는 그대로 지키기</b> — 서민의 술 소주는 ‘값’ 세금 유지. 소주값은 안 올라요.</div></div>
-      <div class="item"><div class="ic">3️⃣</div><div><b>수출·작은 양조장과 함께</b> — K-주류 수출 지원, 소규모 제조 허용을 묶어 한 번에.</div></div>
+      <div class="item"><div class="ic">3️⃣</div><div><b>수출·작은 양조장과 함께</b> — K-주류 수출 지원, 소규모 제조 허용을 한 묶음으로.</div></div>
     </div>
     <div class="result">그 결과 (추정) — 프리미엄 출고량 <b>+21.5%</b> · 세수는 <b>0.7%</b>만 감소(프리미엄은 전체의 1% 미만) · <b>소주값은 그대로</b> · 음주 총량 영향도 미미.</div>
     <div class="cite">전환 시뮬레이션(자체) · 국세청 출고량 · 국제 탄력성 문헌</div>
-    <p class="hook" style="margin-top:24px">적은 비용으로, 우리 술이 세계로. 이게 답이에요. 🌍</p>
+    <div class="anal">
+      <span class="lab">📊 지금이 기회 — 정책의 창</span>
+      <p>최근 언론 정책 어젠다 <span class="num">추진 19건 vs 반대 2건</span>. 정부도 종량세 전환 연구용역을 진행 중 — 바꿀 문이 열려 있어요.</p>
+    </div>
+    <div class="cite">주류정책 어젠다 카탈로그(자체) · 농식품부 연구용역(아시아경제)</div>
+    <p class="hook" style="margin-top:22px">적은 비용으로, 우리 술이 세계로. 이게 답이에요. 🌍</p>
   </section>
 
   <!-- CLOSING -->
@@ -242,7 +277,7 @@
 
   <div class="source">
     <strong>인용·데이터 출처</strong><br>
-    국세청 「주류별 주세 신고현황」(2010~2024) · 한국은행 소비자물가지수 · 기획재정부 종량세 전환·기준판매비율 · 머니투데이·시사위크·법률신문 등 보도 · 국회 주세법 개정안 시뮬레이션 · Wagenaar(2009)·Shang(2020) 등 국제 문헌 · 이준규·송은주(2017) · 자체 분석(세부담↔성장 상관, 전환 시뮬레이션).<br>
+    국세청 「주류별 주세 신고현황」(2010~2024) · 한국은행 소비자물가지수 · 기획재정부 종량세 전환·기준판매비율 · 머니투데이·뉴스핌·법률신문·농민신문·아시아경제 등 보도 · 국회 주세법 개정안 시뮬레이션 · Wagenaar(2009)·Shang(2020)·Nelson &amp; Moran(2020) 등 국제 문헌 · 이준규·송은주(2017) · 자체 분석(세부담↔성장 상관 r=+0.68, 2024 소주 CPI −2.3%, 전환 시뮬레이션).<br>
     ※ 교육·연구 목적의 그림책입니다. 수치는 시점·가정에 따라 달라질 수 있습니다.
   </div>
 </div>
