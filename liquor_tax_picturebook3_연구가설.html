@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리 술의 수수께끼 · 연구가설 그림책</title>
+<meta property="og:title" content="우리 술의 수수께끼 · 연구가설 그림책">
+<meta property="og:description" content="주류세와 주류산업, 7개의 가설로 푸는 하나의 수수께끼">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gaegu:wght@400;700&family=Gothic+A1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ead5; --paper-deep:#ece0c4; --ink:#3a2e22; --ink-soft:#6b5a45;
+    --barley:#c99a3f; --barley-deep:#a8791f; --pour:#8fb0a3; --pour-deep:#5b8375;
+    --plum:#a8536b; --plum-deep:#843f53; --line:#d8c8a6; --shadow:rgba(58,46,34,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(circle at 20% 10%, rgba(201,154,63,.08), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(143,176,163,.10), transparent 45%),
+      var(--paper);
+    color:var(--ink); font-family:'Gothic A1',sans-serif; line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .book{max-width:860px;margin:0 auto;padding:0 20px 100px}
+  .cover{min-height:86vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0;}
+  .cover .eyebrow{font-family:'Gaegu',cursive;font-size:1.15rem;letter-spacing:.35em;color:var(--barley-deep);margin-bottom:18px;}
+  .cover h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(2.3rem,6.5vw,4.2rem);line-height:1.2;color:var(--ink);margin-bottom:8px;}
+  .cover h1 .accent{color:var(--barley-deep)}
+  .cover .sub{font-family:'Gaegu',cursive;font-size:1.3rem;color:var(--ink-soft);margin-top:22px;}
+  .scroll-cue{margin-top:34px;font-family:'Gaegu',cursive;color:var(--ink-soft);font-size:1rem;animation:bob 2s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+  .page{
+    background:linear-gradient(180deg,#fdf7e9,var(--paper));border:1px solid var(--line);border-radius:22px;
+    padding:44px 40px;margin:34px 0;box-shadow:0 14px 34px -18px var(--shadow);position:relative;
+    opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;
+  }
+  .page.show{opacity:1;transform:none}
+  .page .folio{position:absolute;top:22px;right:28px;font-family:'Gaegu',cursive;color:var(--barley);font-size:1.05rem;letter-spacing:.1em;}
+  .page h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--ink);margin-bottom:6px;line-height:1.35;}
+  .page .lead{font-family:'Gaegu',cursive;font-size:1.2rem;color:var(--barley-deep);margin-bottom:20px;}
+  .page p{margin-bottom:16px;color:var(--ink-soft);font-size:1.05rem}
+  .page p strong{color:var(--ink);font-weight:700}
+  .scene{display:flex;justify-content:center;margin:10px 0 22px}
+  .scene svg{max-width:100%;height:auto;filter:drop-shadow(0 10px 16px var(--shadow))}
+  /* 데이터 팩트 배지 */
+  .fact{display:flex;align-items:center;gap:16px;background:#fffdf6;border:2px dashed var(--barley);border-radius:14px;padding:14px 20px;margin:18px 0;}
+  .fact .big{font-family:'Gowun Batang',serif;font-size:1.7rem;font-weight:700;color:var(--barley-deep);line-height:1;white-space:nowrap}
+  .fact .lbl{font-size:.98rem;color:var(--ink-soft)}
+  /* 참이면 콜아웃 */
+  .callout{background:var(--paper-deep);border-left:5px solid var(--pour-deep);border-radius:0 14px 14px 0;padding:16px 20px;margin:20px 0;}
+  .callout .q{font-family:'Gaegu',cursive;font-size:1.15rem;color:var(--pour-deep);margin-bottom:4px}
+  .callout p{margin:0;color:var(--ink)}
+  .callout.key{border-left-color:var(--plum);}
+  .callout.key .q{color:var(--plum-deep)}
+  .htag{display:inline-block;background:var(--barley-deep);color:#fff;font-family:'Gaegu',cursive;font-size:1rem;padding:2px 14px;border-radius:999px;margin-bottom:10px;}
+  .closing{text-align:center;padding:56px 30px 20px}
+  .closing h2{font-family:'Gowun Batang',serif;font-size:2rem;margin-bottom:14px}
+  .closing p{font-family:'Gaegu',cursive;font-size:1.25rem;color:var(--ink-soft)}
+  .source{margin-top:40px;font-size:.8rem;color:var(--ink-soft);text-align:center;border-top:1px dashed var(--line);padding-top:18px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="eyebrow">데이터가 푸는 수수께끼</div>
+    <h1>우리 술의<br><span class="accent">수수께끼</span></h1>
+    <p class="sub">7개의 가설로 하나의 질문에 답하기<br>— 세금을 풀어야 할까, 말아야 할까?</p>
+    <div class="scroll-cue">↓ 수수께끼부터 보세요</div>
+  </header>
+
+  <!-- 핵심 수수께끼 -->
+  <section class="page">
+    <span class="folio">수수께끼</span>
+    <h2>이상한 일이 벌어지고 있어요</h2>
+    <p class="lead">세금이 무거운 술이 오히려 더 잘 팔린다?!</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="420" height="200" viewBox="0 0 420 200">
+        <line x1="40" y1="170" x2="390" y2="170" stroke="#d8c8a6" stroke-width="2"/>
+        <text x="30" y="30" font-size="13" fill="#6b5a45" font-family="Gaegu,cursive">세금 ↑</text>
+        <!-- 맥주: 낮은 세금, 줄어듦 -->
+        <rect x="80" y="120" width="46" height="50" rx="4" fill="#8fb0a3"/>
+        <text x="103" y="112" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">↓ 감소</text>
+        <text x="103" y="188" text-anchor="middle" font-size="12" fill="#6b5a45">맥주(싼세금)</text>
+        <!-- 위스키: 높은 세금, 폭증 -->
+        <rect x="250" y="45" width="46" height="125" rx="4" fill="#a8536b"/>
+        <text x="273" y="37" text-anchor="middle" font-size="13" fill="#843f53" font-family="Gaegu,cursive" font-weight="700">↑ 3배!</text>
+        <text x="273" y="188" text-anchor="middle" font-size="12" fill="#6b5a45">위스키(비싼세금)</text>
+        <text x="360" y="90" font-size="34" fill="#a8791f" font-family="Gowun Batang,serif">?</text>
+      </svg>
+    </div>
+    <p>보통은 <strong>세금이 무거우면 잘 안 팔릴</strong> 거라 생각하죠. 그런데 데이터를 보니 정반대예요. 세금이 가장 무거운 <strong>위스키·증류식 소주가 가장 빨리 성장</strong>했습니다.</p>
+    <div class="fact"><div class="big">r = +0.68</div><div class="lbl">세금이 무거운 술일수록 더 빨리 성장 (양의 상관)</div></div>
+    <p>그래서 진짜 질문은 이거예요:</p>
+    <div class="callout key">
+      <div class="q">🔑 핵심 질문</div>
+      <p>프리미엄 술은 <strong>① 세금 역풍을 뚫고 큰 걸까</strong>(→ 세금 풀면 더 큰다) <strong>② 아니면 세금과 상관없이 유행으로 큰 걸까</strong>(→ 세금은 부차적)? <br><strong>이걸 풀어야 "세금을 내릴지" 정할 수 있어요.</strong> 아래 7개 가설이 그 단서입니다.</p>
+    </div>
+  </section>
+
+  <!-- H1 -->
+  <section class="page">
+    <span class="folio">단서 1</span>
+    <span class="htag">가설 1 · 탄력성</span>
+    <h2>술마다 '값에 민감한 정도'가 다르다</h2>
+    <p class="lead">소주는 값이 올라도 그냥 산다 (둔감)</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="170" viewBox="0 0 400 170">
+        <!-- 소주: 뻣뻣한 용수철 -->
+        <text x="100" y="28" text-anchor="middle" font-size="14" fill="#843f53" font-family="Gowun Batang,serif" font-weight="700">소주</text>
+        <path d="M100 40 v10 m-12 6 h24 m-24 12 h24 m-24 12 h24 m-24 12 h24 M100 98 v10" stroke="#a8536b" stroke-width="3" fill="none"/>
+        <rect x="78" y="112" width="44" height="22" rx="3" fill="#a8536b"/>
+        <text x="100" y="152" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">잘 안 움직임</text>
+        <!-- 위스키: 늘어나는 용수철 -->
+        <text x="300" y="28" text-anchor="middle" font-size="14" fill="#5b8375" font-family="Gowun Batang,serif" font-weight="700">프리미엄</text>
+        <path d="M300 40 q-16 8 0 16 q16 8 0 16 q-16 8 0 16 q16 8 0 16" stroke="#5b8375" stroke-width="3" fill="none"/>
+        <rect x="278" y="124" width="44" height="22" rx="3" fill="#5b8375"/>
+        <text x="300" y="164" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">값에 더 민감</text>
+      </svg>
+    </div>
+    <p>술마다 값이 오를 때 소비가 줄어드는 정도가 달라요. <strong>소주는 값이 올라도 사람들이 그냥 삽니다</strong>(둔감=비탄력). 프리미엄은 상대적으로 값에 더 민감할 수 있고요.</p>
+    <div class="fact"><div class="big">−0.32</div><div class="lbl">소주: 값 10% 올라도 소비는 3%만 줄어듦</div></div>
+    <div class="callout"><div class="q">참이면?</div><p>소주는 <strong>세금 내려도 소비가 별로 안 늘고</strong>, 프리미엄은 값 내리면 더 잘 팔린다.</p></div>
+  </section>
+
+  <!-- H2 -->
+  <section class="page">
+    <span class="folio">단서 2 · 열쇠</span>
+    <span class="htag">가설 2 · 성장의 진짜 이유</span>
+    <h2>값 때문일까, 유행 때문일까?</h2>
+    <p class="lead">위스키는 값이 올랐는데도 3배 팔렸다</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="185" viewBox="0 0 400 185">
+        <!-- 올라가는 위스키 병 + 풍선(유행/소득) -->
+        <ellipse cx="200" cy="42" rx="46" ry="30" fill="#c99a3f" opacity=".85"/>
+        <text x="200" y="47" text-anchor="middle" font-size="13" fill="#fff" font-family="Gaegu,cursive" font-weight="700">유행·소득</text>
+        <line x1="200" y1="72" x2="200" y2="96" stroke="#a8791f" stroke-width="2" stroke-dasharray="3 3"/>
+        <path d="M186 100h28l4 12v50a5 5 0 0 1-5 5h-26a5 5 0 0 1-5-5v-50z" fill="#a8536b"/>
+        <path d="M170 150 l60 -70" stroke="#5b8375" stroke-width="3" marker-end="url(#up)"/>
+        <defs><marker id="up" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0 0l8 5-8 5z" fill="#5b8375"/></marker></defs>
+        <text x="300" y="70" font-size="13" fill="#5b8375" font-family="Gaegu,cursive" font-weight="700">판매 +73%</text>
+        <text x="300" y="130" font-size="13" fill="#843f53" font-family="Gaegu,cursive">값도 +16% ↑</text>
+      </svg>
+    </div>
+    <p>여기가 <strong>가장 중요한 단서</strong>예요. 값이 <strong>올랐는데도</strong> 3배 가까이 팔렸다면, 값 때문이 아니라 <strong>유행(하이볼·홈술)과 소득</strong> 때문일 수 있어요.</p>
+    <div class="fact"><div class="big">값 +16% → 판매 +73%</div><div class="lbl">가격으로는 설명 안 되는 성장</div></div>
+    <div class="callout key"><div class="q">참이면? (핵심)</div><p>세금은 프리미엄 성장의 <strong>진짜 이유가 아닐 수도</strong> 있어요. → 그러면 "세금 인하가 답"이라는 주장이 <strong>약해집니다.</strong> 그래서 이 가설을 꼭 검증해야 해요.</p></div>
+  </section>
+
+  <!-- H3 -->
+  <section class="page">
+    <span class="folio">단서 3</span>
+    <span class="htag">가설 3 · 전가</span>
+    <h2>세금을 깎으면 값이 정말 내려갈까?</h2>
+    <p class="lead">비싼 술은 확실히, 싼 소주는 잘 안 내려간다</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="170" viewBox="0 0 400 170">
+        <!-- 프리미엄 수도꼭지: 콸콸 -->
+        <text x="100" y="26" text-anchor="middle" font-size="13" fill="#5b8375" font-family="Gowun Batang,serif" font-weight="700">프리미엄</text>
+        <rect x="70" y="36" width="60" height="16" rx="4" fill="#5b8375"/>
+        <path d="M100 52 v70" stroke="#8fb0a3" stroke-width="10"/>
+        <text x="100" y="150" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">값 확 내려감</text>
+        <!-- 소주 수도꼭지: 찔끔 -->
+        <text x="300" y="26" text-anchor="middle" font-size="13" fill="#843f53" font-family="Gowun Batang,serif" font-weight="700">소주</text>
+        <rect x="270" y="36" width="60" height="16" rx="4" fill="#a8536b"/>
+        <path d="M300 52 v20" stroke="#a8536b" stroke-width="4" stroke-dasharray="2 6"/>
+        <text x="300" y="150" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">찔끔</text>
+      </svg>
+    </div>
+    <p>세금을 깎아도 그만큼 값이 내려갈지가 관건이죠. 국제 연구와 우리 데이터 모두, <strong>비싼 술은 세금 인하가 값으로 잘 전달되고</strong>, 싼 소주는 덜 전달된다고 말합니다.</p>
+    <div class="fact"><div class="big">소주값 −2.3%</div><div class="lbl">2024년 세금(과세표준) 낮추자 실제로 소주값 하락</div></div>
+    <div class="callout"><div class="q">참이면?</div><p>프리미엄 세금을 내리면 <strong>소비자가가 진짜로 내려간다</strong> → 산업 성장으로 이어질 통로가 열림.</p></div>
+  </section>
+
+  <!-- H4 -->
+  <section class="page">
+    <span class="folio">단서 4</span>
+    <span class="htag">가설 4 · 역설</span>
+    <h2>세금이 성장을 막는 게 맞긴 할까?</h2>
+    <p class="lead">무거운 세금 술이 더 크는 역설</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="170" viewBox="0 0 400 170">
+        <line x1="50" y1="140" x2="360" y2="140" stroke="#d8c8a6" stroke-width="2"/>
+        <circle cx="110" cy="110" r="7" fill="#8fb0a3"/><text x="110" y="132" text-anchor="middle" font-size="10" fill="#6b5a45">탁주</text>
+        <circle cx="170" cy="115" r="7" fill="#8fb0a3"/><text x="170" y="132" text-anchor="middle" font-size="10" fill="#6b5a45">맥주</text>
+        <circle cx="250" cy="70" r="8" fill="#a8536b"/><text x="250" y="58" text-anchor="middle" font-size="10" fill="#843f53">위스키</text>
+        <circle cx="320" cy="40" r="8" fill="#a8536b"/><text x="320" y="30" text-anchor="middle" font-size="10" fill="#843f53">증류식소주</text>
+        <path d="M95 122 L330 46" stroke="#a8791f" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="60" y="30" font-size="11" fill="#6b5a45" font-family="Gaegu,cursive">성장률 ↑</text>
+        <text x="300" y="160" font-size="11" fill="#6b5a45" font-family="Gaegu,cursive">세금 무거움 →</text>
+      </svg>
+    </div>
+    <p>그래프를 그려보면 <strong>세금이 무거운 쪽으로 갈수록 성장률이 올라가요.</strong> "세금이 산업을 누른다"는 통념과 정반대죠. 단, 이건 상관일 뿐 원인은 더 파봐야 합니다.</p>
+    <div class="fact"><div class="big">우상향</div><div class="lbl">세금 ↔ 성장률이 양(+)의 관계</div></div>
+    <div class="callout"><div class="q">참이면?</div><p>세금은 <strong>어느 술이 크는지를 정하는 결정 요인이 아니다</strong> → "세금만 풀면 된다"는 생각을 조심해야 함.</p></div>
+  </section>
+
+  <!-- H5 -->
+  <section class="page">
+    <span class="folio">단서 5</span>
+    <span class="htag">가설 5 · 종량세의 효과</span>
+    <h2>효과는 '양'이 아니라 '질'에 있다</h2>
+    <p class="lead">2020년 맥주 종량세, 총량은 안 늘었다</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="170" viewBox="0 0 400 170">
+        <text x="110" y="26" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">총량(양)</text>
+        <rect x="80" y="40" width="60" height="90" rx="4" fill="#e0d3b5"/>
+        <rect x="80" y="130" width="60" height="0.5" fill="none"/>
+        <text x="110" y="150" text-anchor="middle" font-size="11" fill="#6b5a45">그대로</text>
+        <path d="M170 90 h50" stroke="#c99a3f" stroke-width="3" marker-end="url(#a5)"/>
+        <defs><marker id="a5" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto"><path d="M0 0l7 4-7 4z" fill="#c99a3f"/></marker></defs>
+        <text x="300" y="26" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">질(고급화)</text>
+        <rect x="270" y="40" width="60" height="90" rx="4" fill="#e0d3b5"/>
+        <rect x="270" y="95" width="60" height="35" rx="0" fill="#6aa77f"/>
+        <text x="300" y="150" text-anchor="middle" font-size="11" fill="#5b8375">프리미엄↑</text>
+      </svg>
+    </div>
+    <p>2020년 맥주·막걸리를 종량세로 바꿨을 때, <strong>전체 판매량은 늘지 않았어요</strong>(코로나 겹침). 하지만 효과는 다른 데 있었을 수 있어요 — <strong>고급·수제 맥주 같은 '질'의 변화</strong>죠.</p>
+    <div class="fact"><div class="big">0.33% → 0.99%</div><div class="lbl">프리미엄 비중은 3배로 (양이 아닌 구성의 변화)</div></div>
+    <div class="callout"><div class="q">참이면?</div><p>종량세의 목표는 <strong>"많이 팔기"가 아니라 "좋게 만들기"</strong> → 정책 목표를 고급화·수출로 잡아야 함.</p></div>
+  </section>
+
+  <!-- H6 -->
+  <section class="page">
+    <span class="folio">단서 6</span>
+    <span class="htag">가설 6 · 건강</span>
+    <h2>세금 내리면 사람들이 더 취할까?</h2>
+    <p class="lead">프리미엄은 양이 적어 큰 영향이 없다</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="160" viewBox="0 0 400 160">
+        <rect x="40" y="40" width="320" height="90" rx="10" fill="#8fb0a3" opacity=".5"/>
+        <text x="200" y="30" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">전체 술 소비 (바다)</text>
+        <circle cx="200" cy="85" r="9" fill="#a8536b"/>
+        <text x="200" y="120" text-anchor="middle" font-size="12" fill="#843f53" font-family="Gaegu,cursive">프리미엄 = 작은 물방울(1% 미만)</text>
+      </svg>
+    </div>
+    <p>세금 인하가 음주를 늘려 건강을 해칠까요? 프리미엄 술은 <strong>비싸고 양이 적어서</strong>(전체의 1% 미만), 총 음주량에 큰 영향을 주기 어렵습니다. 서민의 술 소주는 건드리지 않고요.</p>
+    <div class="fact"><div class="big">&lt; 1%</div><div class="lbl">프리미엄이 전체 술 출고량에서 차지하는 비중</div></div>
+    <div class="callout"><div class="q">참이면?</div><p><strong>건강 걱정 없이 프리미엄만 풀 수 있다</strong> → 반대의 가장 강한 논거를 방어.</p></div>
+  </section>
+
+  <!-- H7 -->
+  <section class="page">
+    <span class="folio">단서 7</span>
+    <span class="htag">가설 7 · 정책의 창</span>
+    <h2>지금이 바꿀 때인가?</h2>
+    <p class="lead">언론은 대체로 '활성화' 편이다</p>
+    <div class="scene" aria-hidden="true">
+      <svg width="400" height="160" viewBox="0 0 400 160">
+        <rect x="150" y="30" width="100" height="110" rx="6" fill="#fdf7e9" stroke="#c99a3f" stroke-width="2"/>
+        <path d="M250 30 l70 -12 v134 l-70 -12z" fill="#f4d27a" opacity=".7"/>
+        <text x="285" y="80" font-size="12" fill="#a8791f" font-family="Gaegu,cursive">활성화</text>
+        <text x="285" y="98" font-size="12" fill="#a8791f" font-family="Gaegu,cursive">바람 →</text>
+        <text x="200" y="150" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">열린 문 = 정책의 창</text>
+      </svg>
+    </div>
+    <p>아무리 좋은 정책도 <strong>때가 맞아야</strong> 통합니다. 최근 언론의 정책 어젠다를 보면 <strong>'산업 활성화·규제완화'가 압도적</strong>이에요.</p>
+    <div class="fact"><div class="big">19 : 2</div><div class="lbl">추진·찬성 어젠다 19건 vs 반대 2건</div></div>
+    <div class="callout"><div class="q">참이면?</div><p><strong>정책을 바꿀 창이 열려 있다</strong> → 우리 안을 진흥 흐름에 얹으면 실현 가능성↑.</p></div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="page closing">
+    <h2>단서를 모으면</h2>
+    <p>7개 가설은 결국 <strong>하나의 질문</strong>에 답합니다.<br><br>
+    프리미엄은 <strong>세금을 뚫고 큰 걸까(H1·H2가 열쇠)</strong>,<br>아니면 세금과 무관한 유행일까?<br><br>
+    <strong>H1·H3이 참이고 H2가 틀리면</strong> → 세금 인하가 강한 처방.<br>
+    <strong>H2가 맞으면</strong> → 세금은 부차적, 진흥·수출이 핵심.<br><br>
+    답은 데이터가 정합니다. <strong>결론을 미리 정하지 않는 것</strong>,<br>그게 이 연구의 핵심이에요. 🥃</p>
+  </section>
+
+  <div class="source">
+    가설·수치 출처: 국세청 주세신고현황(2010~2024) · 한국은행 소비자물가지수 · KCI·국제(Wagenaar 등)·PubMed 문헌 · 뉴스 어젠다 카탈로그.<br>
+    ※ 각 수치는 1차 분석값으로, 정밀 추정 시 달라질 수 있습니다.
+  </div>
+</div>
+
+<script>
+  const pages=document.querySelectorAll('.page');
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.12});
+  pages.forEach(p=>io.observe(p));
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){pages.forEach(p=>p.classList.add('show'));}
+</script>
+</body>
+</html>

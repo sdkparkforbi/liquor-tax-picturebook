@@ -1,0 +1,7 @@
+﻿ENVIRONMENT_VARIABLES.json
+*.env
+.env
+data/
+newswork/
+*.json
+!/*.html
