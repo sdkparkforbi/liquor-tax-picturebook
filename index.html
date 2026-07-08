@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>우리 술 이야기 · 세금부터 내일까지, 여섯 걸음</title>
-<meta property="og:title" content="우리 술 이야기 · 세금부터 내일까지">
-<meta property="og:description" content="술값의 절반은 세금? 억울한 우리 술이 세계로 나가기까지 — 여섯 걸음으로 이어지는 이야기">
+<title>우리 술 실종 사건 · 세금 추리극 여섯 걸음</title>
+<meta property="og:title" content="우리 술 이야기 · 누가 우리 술의 발목을 잡았나?">
+<meta property="og:description" content="술값의 절반은 세금? 반전 있는 추리극으로 푸는 우리 주류산업의 해법 — 여섯 걸음">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aiforalab.com/juryuse/thumbnail.png">
 <meta property="og:image:width" content="1200">
@@ -34,13 +34,13 @@
   .book{max-width:820px;margin:0 auto;padding:0 20px 100px}
   .cover{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 0;}
   .cover .eyebrow{font-family:'Gaegu',cursive;font-size:1.15rem;letter-spacing:.3em;color:var(--barley-deep);margin-bottom:18px;}
-  .cover h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.15;color:var(--ink);margin-bottom:8px;}
+  .cover h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(2.3rem,7.5vw,4.3rem);line-height:1.16;color:var(--ink);margin-bottom:8px;}
   .cover h1 .accent{color:var(--barley-deep)}
   .cover .sub{font-family:'Gaegu',cursive;font-size:1.35rem;color:var(--ink-soft);margin-top:22px;}
-  .cover .tiny{font-family:'Gaegu',cursive;font-size:1.05rem;color:var(--barley-deep);margin-top:26px}
+  .cover .tiny{font-family:'Gaegu',cursive;font-size:1.05rem;color:var(--barley-deep);margin-top:24px}
   .bottles{display:flex;gap:6px;align-items:flex-end;margin:36px 0 8px;height:120px}
   .bottles svg{filter:drop-shadow(0 8px 10px var(--shadow))}
-  .scroll-cue{margin-top:30px;font-family:'Gaegu',cursive;color:var(--ink-soft);font-size:1rem;animation:bob 2s ease-in-out infinite;}
+  .scroll-cue{margin-top:28px;font-family:'Gaegu',cursive;color:var(--ink-soft);font-size:1rem;animation:bob 2s ease-in-out infinite;}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
   .page{
     background:linear-gradient(180deg,#fdf7e9,var(--paper));border:1px solid var(--line);border-radius:22px;
@@ -48,21 +48,33 @@
     opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;
   }
   .page.show{opacity:1;transform:none}
-  .step{position:absolute;top:20px;right:26px;font-family:'Gaegu',cursive;color:var(--barley);font-size:1rem;letter-spacing:.05em;}
-  .page .folio{font-family:'Gaegu',cursive;color:var(--barley-deep);font-size:1.2rem;margin-bottom:2px;}
+  .pageno{position:absolute;top:20px;right:26px;font-family:'Gaegu',cursive;color:var(--barley);font-size:1rem;}
+  .folio{font-family:'Gaegu',cursive;color:var(--barley-deep);font-size:1.2rem;margin-bottom:2px;}
   .page h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(1.7rem,4.5vw,2.3rem);color:var(--ink);margin-bottom:18px;line-height:1.3;}
-  .page p{margin-bottom:16px;color:var(--ink-soft);font-size:1.12rem}
+  .page p{margin-bottom:14px;color:var(--ink-soft);font-size:1.12rem}
   .page p strong{color:var(--ink);font-weight:700}
-  .scene{display:flex;justify-content:center;margin:6px 0 24px}
+  .scene{display:flex;justify-content:center;margin:6px 0 22px}
   .scene svg{max-width:100%;height:auto;filter:drop-shadow(0 10px 16px var(--shadow))}
-  .big{display:flex;align-items:center;gap:16px;background:#fffdf6;border:2px dashed var(--barley);border-radius:14px;padding:14px 22px;margin:18px 0;}
+  .big{display:flex;align-items:center;gap:16px;background:#fffdf6;border:2px dashed var(--barley);border-radius:14px;padding:14px 22px;margin:16px 0 4px;}
   .big .n{font-family:'Gowun Batang',serif;font-size:1.9rem;font-weight:700;color:var(--barley-deep);white-space:nowrap;line-height:1}
   .big .t{font-size:1.02rem;color:var(--ink-soft)}
-  .hook{font-family:'Gaegu',cursive;font-size:1.25rem;color:var(--plum-deep);text-align:center;margin-top:22px}
+  .cite{font-family:'Gaegu',cursive;font-size:.86rem;color:#9a8a6c;margin:2px 0 16px 4px;}
+  .cite::before{content:"↳ 출처 ";opacity:.8}
+  .twist{display:inline-block;background:var(--plum);color:#fff;font-family:'Gaegu',cursive;padding:3px 18px;border-radius:999px;font-size:1.15rem;margin-bottom:14px;}
+  .hook{font-family:'Gaegu',cursive;font-size:1.25rem;color:var(--plum-deep);text-align:center;margin-top:20px}
+  /* 처방전 카드 */
+  .rx{background:#fffdf6;border:2px solid var(--pour-deep);border-radius:18px;padding:24px 26px;margin:22px 0;}
+  .rx .rxh{font-family:'Gowun Batang',serif;font-weight:700;font-size:1.2rem;color:var(--pour-deep);margin-bottom:14px;text-align:center}
+  .rx .item{display:flex;gap:14px;align-items:flex-start;margin:12px 0;}
+  .rx .item .ic{font-size:1.6rem;line-height:1;flex-shrink:0}
+  .rx .item div{font-size:1.06rem;color:var(--ink)}
+  .rx .item b{color:var(--pour-deep)}
+  .result{background:var(--paper-deep);border-radius:12px;padding:14px 18px;margin-top:16px;font-size:1.02rem;color:var(--ink)}
+  .result b{color:var(--plum-deep)}
   .closing{text-align:center;padding:56px 30px 20px}
   .closing h2{font-family:'Gowun Batang',serif;font-size:2rem;margin-bottom:14px}
   .closing p{font-family:'Gaegu',cursive;font-size:1.3rem;color:var(--ink-soft)}
-  .source{margin-top:40px;font-size:.8rem;color:var(--ink-soft);text-align:center;border-top:1px dashed var(--line);padding-top:18px;line-height:1.6;}
+  .source{margin-top:40px;font-size:.78rem;color:var(--ink-soft);text-align:center;border-top:1px dashed var(--line);padding-top:18px;line-height:1.7;}
 </style>
 </head>
 <body>
@@ -70,166 +82,174 @@
 
   <!-- COVER -->
   <header class="cover">
-    <div class="eyebrow">술 한 잔 속 경제 이야기</div>
-    <h1>우리 술<br><span class="accent">이야기</span></h1>
+    <div class="eyebrow">세금 추리극 · 여섯 걸음</div>
+    <h1>누가 우리 술의<br><span class="accent">발목</span>을 잡았나?</h1>
     <div class="bottles" aria-hidden="true">
       <svg width="46" height="118" viewBox="0 0 46 118"><rect x="18" y="0" width="10" height="20" rx="2" fill="#4a7a5e"/><path d="M14 20h18l4 16v70a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6V36z" fill="#6aa77f"/><rect x="12" y="52" width="22" height="34" rx="3" fill="#f4ead5"/></svg>
       <svg width="52" height="112" viewBox="0 0 52 112"><path d="M10 22h32v78a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8z" fill="#e0a63b"/><path d="M10 22h32v22H10z" fill="#f4d27a"/><rect x="8" y="16" width="36" height="10" rx="4" fill="#c99a3f"/></svg>
       <svg width="50" height="100" viewBox="0 0 50 100"><rect x="20" y="0" width="10" height="16" rx="2" fill="#3a2e22"/><path d="M10 30c0-8 5-14 15-14s15 6 15 14v56a6 6 0 0 1-6 6H16a6 6 0 0 1-6-6z" fill="#a8536b"/><rect x="13" y="46" width="24" height="30" rx="2" fill="#f4ead5"/></svg>
       <svg width="48" height="106" viewBox="0 0 48 106"><path d="M12 24h24l3 14v56a8 8 0 0 1-8 8H17a8 8 0 0 1-8-8V38z" fill="#e8e2d4"/><rect x="16" y="8" width="16" height="18" rx="3" fill="#cfc6b0"/><rect x="10" y="54" width="28" height="26" rx="3" fill="#8fb0a3"/></svg>
     </div>
-    <p class="sub">세금부터 내일까지</p>
-    <p class="tiny">여섯 걸음으로 이어지는 한 편의 이야기</p>
-    <div class="scroll-cue">↓ 첫 걸음을 떼어 보세요</div>
+    <p class="sub">술값의 절반은 세금? 반전 있는 추리극</p>
+    <p class="tiny">여섯 걸음이면 우리 술을 살리는 답이 보여요</p>
+    <div class="scroll-cue">↓ 사건 파일을 열어보세요</div>
   </header>
 
   <!-- 1 -->
   <section class="page">
-    <span class="step">1 / 6</span>
-    <div class="folio">첫째 걸음</div>
-    <h2>술값의 절반은 세금이래요</h2>
+    <span class="pageno">1 / 6</span>
+    <div class="folio">첫째 걸음 · 사건의 시작</div>
+    <h2>술값의 절반이 사라졌다</h2>
     <div class="scene" aria-hidden="true">
       <svg width="360" height="150" viewBox="0 0 360 150">
         <circle cx="80" cy="75" r="46" fill="#f4d27a" stroke="#c99a3f" stroke-width="2"/>
-        <text x="80" y="70" text-anchor="middle" font-size="13" font-family="Gothic A1" font-weight="700" fill="#3a2e22">내가 낸</text>
-        <text x="80" y="88" text-anchor="middle" font-size="13" font-family="Gothic A1" font-weight="700" fill="#3a2e22">술값</text>
+        <text x="80" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#3a2e22">내가 낸</text>
+        <text x="80" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#3a2e22">소주값</text>
         <path d="M135 75h40" stroke="#c99a3f" stroke-width="3" marker-end="url(#a1)"/>
         <defs><marker id="a1" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0 0l6 3-6 3z" fill="#c99a3f"/></marker></defs>
-        <rect x="188" y="44" width="120" height="30" rx="5" fill="#a89a6c"/><text x="248" y="64" text-anchor="middle" font-size="13" fill="#fff" font-family="Gothic A1">술을 만든 값</text>
-        <rect x="188" y="78" width="120" height="30" rx="5" fill="#a8536b"/><text x="248" y="98" text-anchor="middle" font-size="13" fill="#fff" font-family="Gothic A1">세금</text>
+        <rect x="188" y="46" width="120" height="28" rx="5" fill="#a89a6c"/><text x="248" y="65" text-anchor="middle" font-size="12" fill="#fff">술을 만든 값</text>
+        <rect x="188" y="78" width="120" height="28" rx="5" fill="#a8536b"/><text x="248" y="97" text-anchor="middle" font-size="12" fill="#fff">세금 (절반!)</text>
       </svg>
     </div>
-    <p>소주 한 병, 맥주 한 캔을 살 때 우리가 내는 돈. 그 안에는 <strong>술을 만든 값</strong>만 있는 게 아니에요.</p>
-    <p>그 위에 <strong>세금</strong>이 얹혀요. 어떤 술은 <strong>값의 절반쯤이 세금</strong>이랍니다.</p>
-    <p class="hook">그런데 이 세금, 매기는 방법이 두 가지예요.</p>
+    <p>소주 한 병이 공장에서 나올 때, 이미 <strong>값의 절반쯤이 세금</strong>이에요. 우리가 낸 돈의 절반이 술이 아니라 세금이었던 거죠.</p>
+    <div class="cite">“소주 출고가의 절반이 세금” — 머니투데이(2023)</div>
+    <p class="hook">왜 이렇게 많을까? 세금 매기는 방법에 비밀이 있어요.</p>
   </section>
 
   <!-- 2 -->
   <section class="page">
-    <span class="step">2 / 6</span>
-    <div class="folio">둘째 걸음</div>
+    <span class="pageno">2 / 6</span>
+    <div class="folio">둘째 걸음 · 두 얼굴의 세금</div>
     <h2>‘값’에 붙일까, ‘양’에 붙일까</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="380" height="160" viewBox="0 0 380 160">
-        <rect x="30" y="30" width="150" height="100" rx="12" fill="#fdf7e9" stroke="#a8536b" stroke-width="2"/>
-        <text x="105" y="60" text-anchor="middle" font-size="15" font-family="Gowun Batang,serif" font-weight="700" fill="#843f53">종가세</text>
-        <text x="105" y="86" text-anchor="middle" font-size="13" fill="#6b5a45" font-family="Gaegu,cursive">술의 '값'에</text>
-        <text x="105" y="108" text-anchor="middle" font-size="12" fill="#843f53">비쌀수록 세금↑</text>
-        <rect x="200" y="30" width="150" height="100" rx="12" fill="#fdf7e9" stroke="#5b8375" stroke-width="2"/>
-        <text x="275" y="60" text-anchor="middle" font-size="15" font-family="Gowun Batang,serif" font-weight="700" fill="#5b8375">종량세</text>
-        <text x="275" y="86" text-anchor="middle" font-size="13" fill="#6b5a45" font-family="Gaegu,cursive">술의 '양'에</text>
-        <text x="275" y="108" text-anchor="middle" font-size="12" fill="#5b8375">값은 안 봐요</text>
+      <svg width="380" height="150" viewBox="0 0 380 150">
+        <rect x="30" y="26" width="150" height="98" rx="12" fill="#fdf7e9" stroke="#a8536b" stroke-width="2"/>
+        <text x="105" y="56" text-anchor="middle" font-size="15" font-family="Gowun Batang,serif" font-weight="700" fill="#843f53">종가세</text>
+        <text x="105" y="80" text-anchor="middle" font-size="13" fill="#6b5a45" font-family="Gaegu,cursive">술의 '값'에</text>
+        <text x="105" y="102" text-anchor="middle" font-size="12" fill="#843f53">비쌀수록 세금↑</text>
+        <rect x="200" y="26" width="150" height="98" rx="12" fill="#fdf7e9" stroke="#5b8375" stroke-width="2"/>
+        <text x="275" y="56" text-anchor="middle" font-size="15" font-family="Gowun Batang,serif" font-weight="700" fill="#5b8375">종량세</text>
+        <text x="275" y="80" text-anchor="middle" font-size="13" fill="#6b5a45" font-family="Gaegu,cursive">술의 '양'에</text>
+        <text x="275" y="102" text-anchor="middle" font-size="12" fill="#5b8375">값은 안 봐요</text>
       </svg>
     </div>
-    <p>하나는 술의 <strong>‘값’에 붙여요(종가세).</strong> 비싼 술일수록 세금도 커지죠.</p>
-    <p>다른 하나는 술의 <strong>‘양’에 붙여요(종량세).</strong> 값은 안 보고, 담긴 만큼만 세금을 매겨요.</p>
-    <p class="hook">우리나라 소주·위스키는 아직 ‘값’에 붙이는 종가세예요.</p>
+    <p>세상엔 두 가지 세금이 있어요. 하나는 <strong>‘값’에 붙이고(종가세)</strong>, 하나는 <strong>‘양’에 붙여요(종량세).</strong></p>
+    <p>세계 대부분은 ‘양’ 세금을 써요. <strong>OECD 38개국 중 ‘값’ 세금은 딱 4개국</strong> — 그중 하나가 우리나라 소주·위스키랍니다.</p>
+    <div class="cite">OECD 주세 비교 · 자유기업원 해설</div>
+    <p class="hook">이 ‘값 세금’이 착한 우리 술을 울립니다.</p>
   </section>
 
   <!-- 3 -->
   <section class="page">
-    <span class="step">3 / 6</span>
-    <div class="folio">셋째 걸음</div>
+    <span class="pageno">3 / 6</span>
+    <div class="folio">셋째 걸음 · 첫 번째 용의자</div>
     <h2>억울한 우리 술</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="380" height="190" viewBox="0 0 380 190">
-        <rect x="182" y="150" width="16" height="34" rx="3" fill="#a8791f"/>
-        <rect x="150" y="176" width="80" height="12" rx="6" fill="#a8791f"/>
+      <svg width="380" height="185" viewBox="0 0 380 185">
+        <rect x="182" y="148" width="16" height="32" rx="3" fill="#a8791f"/>
+        <rect x="150" y="174" width="80" height="11" rx="5" fill="#a8791f"/>
         <rect x="60" y="80" width="260" height="9" rx="4" fill="#c99a3f"/>
         <line x1="100" y1="85" x2="100" y2="110" stroke="#5b8375" stroke-width="2"/>
         <rect x="82" y="110" width="36" height="22" rx="4" fill="#8fb0a3"/>
-        <text x="100" y="150" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">맥주</text>
-        <line x1="290" y1="85" x2="290" y2="100" stroke="#843f53" stroke-width="2"/>
-        <rect x="258" y="100" width="64" height="58" rx="6" fill="#a8536b"/>
-        <text x="290" y="126" text-anchor="middle" font-size="12" fill="#fff" font-family="Gothic A1" font-weight="700">위스키</text>
-        <text x="290" y="143" text-anchor="middle" font-size="11" fill="#fff" font-family="Gothic A1">세금</text>
+        <text x="100" y="150" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">맥주 세금</text>
+        <line x1="290" y1="85" x2="290" y2="98" stroke="#843f53" stroke-width="2"/>
+        <rect x="258" y="98" width="64" height="60" rx="6" fill="#a8536b"/>
+        <text x="290" y="126" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">위스키</text>
+        <text x="290" y="143" text-anchor="middle" font-size="11" fill="#fff">세금</text>
       </svg>
     </div>
-    <p>‘값’에 붙이니 문제가 생겨요. 좋은 재료로 정성껏 만든 <strong>비싼 술일수록 세금이 무거워집니다.</strong></p>
-    <p>그래서 잘 만들고 싶어도, 세금이 발목을 잡아요.</p>
-    <div class="big"><div class="n">14배</div><div class="t">위스키에 붙는 세금은 맥주의 열네 배!</div></div>
-    <p class="hook">그런데… 이상한 일이 벌어지고 있어요.</p>
+    <p>‘값’에 붙이니, 좋은 재료로 정성껏 만든 <strong>비싼 술일수록 세금이 무거워져요.</strong> 잘 만들수록 손해라니, 억울하죠.</p>
+    <div class="big"><div class="n">14배</div><div class="t">위스키 세금(11,104원/L)은 맥주(772원/L)의 열네 배!</div></div>
+    <div class="cite">국세청 주세신고현황(2024) 리터당 세부담 계산</div>
+    <p class="hook">범인은 ‘값 세금’이군! …그런데, 반전이 있어요.</p>
   </section>
 
   <!-- 4 -->
   <section class="page">
-    <span class="step">4 / 6</span>
-    <div class="folio">넷째 걸음</div>
-    <h2>그래도 쑥쑥 크는 우리 술</h2>
+    <span class="pageno">4 / 6</span>
+    <div class="folio">넷째 걸음 · 반전</div>
+    <span class="twist">🔍 반전!</span>
+    <h2>세금 무거운 술이 더 잘 팔린다?!</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="360" height="180" viewBox="0 0 360 180">
-        <line x1="40" y1="155" x2="330" y2="155" stroke="#d8c8a6" stroke-width="2"/>
-        <rect x="90" y="120" width="46" height="35" rx="4" fill="#e0d3b5"/>
-        <text x="113" y="172" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">예전</text>
-        <rect x="210" y="45" width="46" height="110" rx="4" fill="#a8536b"/>
-        <text x="233" y="38" text-anchor="middle" font-size="15" fill="#843f53" font-family="Gaegu,cursive" font-weight="700">3배 ↑</text>
-        <text x="233" y="172" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">지금</text>
+      <svg width="360" height="175" viewBox="0 0 360 175">
+        <line x1="40" y1="150" x2="330" y2="150" stroke="#d8c8a6" stroke-width="2"/>
+        <rect x="90" y="118" width="46" height="32" rx="4" fill="#e0d3b5"/>
+        <text x="113" y="168" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">예전</text>
+        <rect x="210" y="42" width="46" height="108" rx="4" fill="#a8536b"/>
+        <text x="233" y="34" text-anchor="middle" font-size="15" fill="#843f53" font-family="Gaegu,cursive" font-weight="700">3배 ↑</text>
+        <text x="233" y="168" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">지금</text>
+        <text x="300" y="60" font-size="30" fill="#a8791f" font-family="Gowun Batang,serif">?!</text>
       </svg>
     </div>
-    <p>놀랍게도 <strong>위스키와 증류식 소주가 3배 가까이 컸어요.</strong> 무거운 세금을 지고도 말이죠.</p>
-    <p>여기서 궁금해집니다.</p>
-    <div class="big"><div class="n">?</div><div class="t">세금이라는 무거운 짐을 덜어주면, 얼마나 더 클까?</div></div>
-    <p class="hook">그래서 사람들이 말해요 — “세금을 낮춰보자!”</p>
+    <p>세금이 범인이라면, 세금 무거운 술은 힘들어야죠. 그런데 정반대예요. <strong>세금이 제일 무거운 위스키·증류식 소주가 3배나 컸어요!</strong></p>
+    <div class="big"><div class="n">3.1배</div><div class="t">위스키 출고량 2020→2024 (9,803 → 30,161㎘)</div></div>
+    <div class="cite">국세청 주류 출고량</div>
+    <p>심지어 <strong>세금이 무거운 술일수록 더 빨리 성장</strong>했어요(상관 +0.68). “어? 그럼 세금이 범인이 아닌가?”</p>
+    <div class="cite">주종별 세부담↔성장률 상관분석(자체)</div>
+    <p class="hook">진짜 범인을 밝히려면, 딱 하나만 확인하면 돼요.</p>
   </section>
 
   <!-- 5 -->
   <section class="page">
-    <span class="step">5 / 6</span>
-    <div class="folio">다섯째 걸음</div>
-    <h2>세금을 낮추면? (단, 조심조심)</h2>
+    <span class="pageno">5 / 6</span>
+    <div class="folio">다섯째 걸음 · 결정적 증거</div>
+    <h2>세금을 낮추면, 값이 진짜 내려갈까?</h2>
     <div class="scene" aria-hidden="true">
-      <svg width="380" height="160" viewBox="0 0 380 160">
-        <path d="M60 40h40l6 20v80a6 6 0 0 1-6 6H60a6 6 0 0 1-6-6V60z" fill="#a8536b"/>
-        <rect x="34" y="74" width="32" height="46" rx="6" fill="#843f53"/>
-        <text x="80" y="150" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">무거운 세금</text>
-        <path d="M150 90h70" stroke="#c99a3f" stroke-width="4" marker-end="url(#a5)"/>
-        <defs><marker id="a5" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#c99a3f"/></marker></defs>
-        <text x="185" y="80" text-anchor="middle" font-size="12" fill="#a8791f" font-family="Gaegu,cursive">종량세로</text>
-        <path d="M300 40h40l6 20v80a6 6 0 0 1-6 6h-40a6 6 0 0 1-6-6V60z" fill="#6aa77f"/>
-        <rect x="288" y="94" width="18" height="18" rx="4" fill="#5b8375"/>
-        <text x="320" y="150" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">가벼워진 세금</text>
+      <svg width="360" height="150" viewBox="0 0 360 150">
+        <rect x="60" y="40" width="60" height="16" rx="4" fill="#a8536b"/>
+        <path d="M90 56 v64" stroke="#8fb0a3" stroke-width="10"/>
+        <text x="90" y="140" text-anchor="middle" font-size="12" fill="#5b8375" font-family="Gaegu,cursive">비싼 술: 값 확↓</text>
+        <text x="180" y="80" font-size="26" fill="#a8791f" font-family="Gowun Batang,serif">✓</text>
+        <rect x="240" y="40" width="60" height="16" rx="4" fill="#a8536b"/>
+        <path d="M270 56 v22" stroke="#a8536b" stroke-width="4" stroke-dasharray="2 6"/>
+        <text x="270" y="140" text-anchor="middle" font-size="12" fill="#6b5a45" font-family="Gaegu,cursive">싼 소주: 찔끔</text>
       </svg>
     </div>
-    <p>프리미엄 술을 <strong>‘양’에 붙이는 종량세로</strong> 바꾸면, 무거운 세금이 확 가벼워지고 <strong>술값도 내려가요.</strong> 실제로 2020년 맥주, 2024년 소주에서 값이 내렸답니다.</p>
-    <p>하지만 조심! <strong>서민의 술 소주</strong>는 오히려 오를 수 있어요. 그래서 소주는 그대로 두고, <strong>비싼 술부터 살살</strong> 바꿔요.</p>
-    <p class="hook">그럼, 우리 술의 내일은 어떻게 될까요?</p>
+    <p>범인을 잡는 열쇠는 이거예요 — 세금을 깎으면 값이 정말 내려갈까? <strong>증거 둘을 찾았습니다.</strong></p>
+    <p><strong>증거 ①</strong> 2024년 소주 세금(과세표준)을 낮추자, <strong>소주값이 실제로 2.3% 내렸어요.</strong> 전 기간 통틀어 소주값이 내린 유일한 해!</p>
+    <div class="cite">한국은행 소비자물가지수 · 기준판매비율 도입</div>
+    <p><strong>증거 ②</strong> 세계 연구도 같은 말 — <strong>비싼 술은 세금을 내리면 값이 확실히 내려가요</strong>(전가율 스카치 1.14).</p>
+    <div class="cite">Shang et al.(2020), OECD 27개국 세금 전가율</div>
+    <p>결론: <strong>세금은 범인이 맞아요.</strong> 위스키는 세금을 뚫고 큰 거고, <strong>세금을 풀면 더 큽니다.</strong> 종량세로 바꾸면 위스키 세금은 <strong>78.7%나 줄어요.</strong></p>
+    <div class="cite">증류주 종량세 전환 시뮬레이션 · 국회 주세법 개정안(언론 보도)</div>
+    <p class="hook">근데 그냥 다 깎으면 안 돼요. 함정이 있거든요.</p>
   </section>
 
   <!-- 6 -->
   <section class="page">
-    <span class="step">6 / 6</span>
-    <div class="folio">여섯째 걸음</div>
-    <h2>우리 술의 내일</h2>
-    <div class="scene" aria-hidden="true">
-      <svg width="360" height="160" viewBox="0 0 360 160">
-        <circle cx="180" cy="80" r="58" fill="#eaf1ed" stroke="#8fb0a3" stroke-width="2"/>
-        <path d="M180 22a58 58 0 0 1 0 116M180 22v116M133 55h94M133 105h94" stroke="#a8c4b8" stroke-width="1.5" fill="none"/>
-        <path d="M176 40h8l1 5v30a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4V45z" fill="#a8536b"/>
-        <path d="M250 70 q40 -20 70 -6" stroke="#c99a3f" stroke-width="3" fill="none" marker-end="url(#a6)"/>
-        <defs><marker id="a6" markerWidth="10" markerHeight="10" refX="6" refY="4" orient="auto"><path d="M0 0l8 4-8 4z" fill="#c99a3f"/></marker></defs>
-        <text x="300" y="55" text-anchor="middle" font-size="12" fill="#a8791f" font-family="Gaegu,cursive">세계로</text>
-      </svg>
+    <span class="pageno">6 / 6</span>
+    <div class="folio">여섯째 걸음 · 사건 해결</div>
+    <h2>이렇게 하면, 우리 술이 삽니다</h2>
+    <p><strong>함정:</strong> 소주까지 종량세로 바꾸면 <strong>소주값이 30.5% 올라요.</strong> 소주는 서민의 술인데 말이죠. 게다가 소주는 값에 둔감해서(비탄력 −0.32) 값만 오르고 소비는 안 줄어요.</p>
+    <div class="cite">종량세 시뮬(소주 662→864원) · 소주 탄력성(자체·이준규·송은주 2017)</div>
+    <div class="rx">
+      <div class="rxh">🥃 우리 술을 살리는 세 걸음</div>
+      <div class="item"><div class="ic">1️⃣</div><div><b>프리미엄부터 ‘양’ 세금으로</b> — 위스키·증류식 소주를 도수(알코올 양) 기준 종량세로. 세금 확 내려가고 값도 내려가 잘 팔려요.</div></div>
+      <div class="item"><div class="ic">2️⃣</div><div><b>소주는 그대로 지키기</b> — 서민의 술 소주는 ‘값’ 세금 유지. 소주값은 안 올라요.</div></div>
+      <div class="item"><div class="ic">3️⃣</div><div><b>수출·작은 양조장과 함께</b> — K-주류 수출 지원, 소규모 제조 허용을 묶어 한 번에.</div></div>
     </div>
-    <p>세금을 ‘값’이 아니라 ‘양’에 잘 매기면, 이런 일이 생겨요.</p>
-    <p><strong>① 국산 술이 싸지고 · ② 더 좋은 술을 만들고 · ③ 세계로 수출되고 · ④ 소주값은 지켜져요.</strong></p>
-    <p>답을 미리 정하진 않아요. <strong>데이터로 하나하나 확인하면서,</strong> 우리 술의 내일을 그려갑니다. 🥃</p>
+    <div class="result">그 결과 (추정) — 프리미엄 출고량 <b>+21.5%</b> · 세수는 <b>0.7%</b>만 감소(프리미엄은 전체의 1% 미만) · <b>소주값은 그대로</b> · 음주 총량 영향도 미미.</div>
+    <div class="cite">전환 시뮬레이션(자체) · 국세청 출고량 · 국제 탄력성 문헌</div>
+    <p class="hook" style="margin-top:24px">적은 비용으로, 우리 술이 세계로. 이게 답이에요. 🌍</p>
   </section>
 
   <!-- CLOSING -->
   <section class="page closing">
-    <h2>여섯 걸음의 끝에서</h2>
-    <p>술 한 잔 값에도<br>이렇게 많은 이야기가 담겨 있어요.<br><br>세금을 <strong>어떻게 매기느냐</strong>가<br>우리 술의 <strong>내일</strong>을 조용히 바꿔놓는답니다.</p>
+    <h2>사건은 해결됐습니다</h2>
+    <p>범인은 ‘값에 붙는 세금’,<br>해법은 ‘양에 붙는 세금’ — 단, 소주는 지키고.<br><br>
+    술 한 잔 값에 담긴 이 이야기가<br>우리 술의 <strong>내일</strong>을 바꿉니다. 🥃</p>
   </section>
 
   <div class="source">
-    참고: 국세청 주세신고현황(2010~2024) · 한국은행 소비자물가지수 · 기획재정부 종량세 전환·기준판매비율 · 국내외 학술 문헌 등<br>
-    ※ 교육·연구 목적의 그림책입니다. 세율·수치는 시점에 따라 달라질 수 있습니다.
+    <strong>인용·데이터 출처</strong><br>
+    국세청 「주류별 주세 신고현황」(2010~2024) · 한국은행 소비자물가지수 · 기획재정부 종량세 전환·기준판매비율 · 머니투데이·시사위크·법률신문 등 보도 · 국회 주세법 개정안 시뮬레이션 · Wagenaar(2009)·Shang(2020) 등 국제 문헌 · 이준규·송은주(2017) · 자체 분석(세부담↔성장 상관, 전환 시뮬레이션).<br>
+    ※ 교육·연구 목적의 그림책입니다. 수치는 시점·가정에 따라 달라질 수 있습니다.
   </div>
 </div>
 
 <script>
   const pages=document.querySelectorAll('.page');
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.12});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.1});
   pages.forEach(p=>io.observe(p));
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){pages.forEach(p=>p.classList.add('show'));}
 </script>
