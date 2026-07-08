@@ -5,3 +5,5 @@ data/
 newswork/
 *.json
 !/*.html
+
+make_thumb.py
